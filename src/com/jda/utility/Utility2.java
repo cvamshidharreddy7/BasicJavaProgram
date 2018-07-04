@@ -7,6 +7,7 @@ public class Utility2 {
 		public Utility2(){
 			scanner = new Scanner(System.in);
 		}
+		
 		public int numberOfFlips() {
 			return scanner.nextInt();
 		}

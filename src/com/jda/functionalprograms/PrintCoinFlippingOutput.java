@@ -1,3 +1,12 @@
+/**********************************
+ * Pupose : To know the output of coin flipping
+ * @author Vamshidhar Reddy
+ * @version 1.0
+ * @date 7/4/2018
+ * 
+ * 
+ ************************************/
+
 package com.jda.functionalprograms;
 
 import com.jda.utility.Utility2;
