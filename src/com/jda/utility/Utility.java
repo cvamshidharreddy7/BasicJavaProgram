@@ -69,5 +69,28 @@ public class Utility {
 			}
 			return harmonicNumber;
 	}
+	int numberOfTwos = 0;
+	public int makeOddNumber(int number){
+			while(number%2==0){
+				number = number/2;
+				numberOfTwos++;
+			}
+			for(int i=0;i<numberOfTwos;i++){
+				System.out.print("2" + " ");
+			}
+			return number;
+	}
+	public int primeFactorisation(int number){
+			number = makeOddNumber(number);
+			for(int i=3;i<=Math.sqrt(number); i+=2){
+				while(number%i == 0){
+					System.out.print(i+ " ");
+				number /= i;
+				}
+				
+				
+			}
+			return 0;
+	}
 
 }
