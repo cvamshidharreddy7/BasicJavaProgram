@@ -53,9 +53,21 @@ public class Utility {
 	PowersOfTwo powersOfTwo = new PowersOfTwo();
 	int power = 1;
 
-	public int getPower(int Number) {
+	public int getPower(int number) {
 		power = power * 2;
 		return power;
+	}
+	public double getInverse(int number){
+			Double number1 = Double.valueOf(number);
+			
+			return 1/number1 ;
+	}
+	double harmonicNumber = 0; 
+	public double harmonicValue(int number){
+			for(int i=1;i<=number;i++){
+				harmonicNumber += getInverse(i);
+			}
+			return harmonicNumber;
 	}
 
 }

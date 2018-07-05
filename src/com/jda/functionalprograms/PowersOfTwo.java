@@ -2,8 +2,7 @@ package com.jda.functionalprograms;
 
 import com.jda.utility.Utility;
 
-public class PowersOfTwo {
-			
+public class PowersOfTwo {		
 
 			public static void main(String[] args){
 				Utility utility = new Utility();

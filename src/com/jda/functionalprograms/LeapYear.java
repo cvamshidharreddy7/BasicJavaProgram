@@ -1,14 +1,15 @@
 package com.jda.functionalprograms;
 
-import com.jda.utility.Utility3;
+import com.jda.utility.Utility;
+
 
 public class LeapYear {
 		public static void main(String[] args){
 			
-			Utility3 utility3 = new Utility3();
+			Utility utility= new Utility();
 			
-			int year = utility3.getYear();
-			if(utility3.IsLeapYear(year) == false){
+			int year = utility.getYear();
+			if(utility.IsLeapYear(year) == false){
 				System.out.println("Not a leap year!");
 			}
 			else {
