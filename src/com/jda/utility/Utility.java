@@ -1,5 +1,6 @@
 package com.jda.utility;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
@@ -140,7 +141,8 @@ public class Utility {
 
 	}
 
-	// **************************************************Coupon problem**********************//
+	// **************************************************Coupon
+	// problem**********************//
 	int total;
 	int number;
 
@@ -192,4 +194,74 @@ public class Utility {
 		int totalRandomNumbers = randomSet.size();
 		return totalRandomNumbers;
 	}
+
+	/************************ Two D Array *******************************/
+	int M;
+	int N;
+	int dataType;
+
+	public void getData() {
+		System.out.println("Enter number of rows");
+		M = scanner.nextInt();
+		System.out.println("Enter number of columns");
+		N = scanner.nextInt();
+		System.out.println("Enter the datatype");
+		dataType = scanner.nextInt();
+	}
+
+	public void switchMethod(){
+				PrintWriter out = new PrintWriter(System.out);
+				switch(dataType){
+				case 1:
+					System.out.println("Enter the 2D array");
+					int[][] integerArray = new int[M][N];
+					for(int i=0;i<M;i++){
+						for(int j=0;j<N;j++){
+							integerArray[i][j] = scanner.nextInt();
+						}
+					}
+						for(int i=0;i<M;i++){
+							for(int j=0;j<N;j++){
+								out.print(integerArray[i][j] + " ");
+							}
+							out.println();
+						}
+						break;
+				case 2 : 
+					System.out.println("Enter the doubles' 2D array");
+					double[][] doubleArray = new double[M][N];
+					for(int i=0;i<M;i++){
+						for(int j=0;j<N;j++){
+							doubleArray[i][j] = scanner.nextDouble();
+							
+						}
+					}
+					for(int i=0;i<M;i++){
+						for(int j=0;j<N;j++){
+							out.print(doubleArray[i][j]+" ");
+						}
+						out.println();
+					}
+				break;
+				case 3:
+					System.out.println("Enter the Boolean array");
+				boolean[][] booleanArray = new boolean[M][N];
+				for(int i=0;i<M;i++){
+					for(int j=0;j<N;j++){
+						booleanArray[i][j] = scanner.nextBoolean();
+						}
+				}
+				for(int i=0;i<M;i++){
+					for(int j=0;j<N;j++){
+						out.print(booleanArray[i][j]+" ");
+					}
+					out.println();
+				}
+				break;
+				}
+				out.flush();
+				out.close();
+				
+	}
+
 }
