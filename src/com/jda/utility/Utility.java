@@ -209,59 +209,161 @@ public class Utility {
 		dataType = scanner.nextInt();
 	}
 
-	public void switchMethod(){
-				PrintWriter out = new PrintWriter(System.out);
-				switch(dataType){
-				case 1:
-					System.out.println("Enter the 2D array");
-					int[][] integerArray = new int[M][N];
-					for(int i=0;i<M;i++){
-						for(int j=0;j<N;j++){
-							integerArray[i][j] = scanner.nextInt();
-						}
-					}
-						for(int i=0;i<M;i++){
-							for(int j=0;j<N;j++){
-								out.print(integerArray[i][j] + " ");
-							}
-							out.println();
-						}
-						break;
-				case 2 : 
-					System.out.println("Enter the doubles' 2D array");
-					double[][] doubleArray = new double[M][N];
-					for(int i=0;i<M;i++){
-						for(int j=0;j<N;j++){
-							doubleArray[i][j] = scanner.nextDouble();
-							
-						}
-					}
-					for(int i=0;i<M;i++){
-						for(int j=0;j<N;j++){
-							out.print(doubleArray[i][j]+" ");
-						}
-						out.println();
-					}
-				break;
-				case 3:
-					System.out.println("Enter the Boolean array");
-				boolean[][] booleanArray = new boolean[M][N];
-				for(int i=0;i<M;i++){
-					for(int j=0;j<N;j++){
-						booleanArray[i][j] = scanner.nextBoolean();
-						}
+	public void switchMethod() {
+		PrintWriter out = new PrintWriter(System.out);
+		switch (dataType) {
+		case 1:
+			System.out.println("Enter the 2D array");
+			int[][] integerArray = new int[M][N];
+			for (int i = 0; i < M; i++) {
+				for (int j = 0; j < N; j++) {
+					integerArray[i][j] = scanner.nextInt();
 				}
-				for(int i=0;i<M;i++){
-					for(int j=0;j<N;j++){
-						out.print(booleanArray[i][j]+" ");
-					}
-					out.println();
+			}
+			for (int i = 0; i < M; i++) {
+				for (int j = 0; j < N; j++) {
+					out.print(integerArray[i][j] + " ");
 				}
-				break;
+				out.println();
+			}
+			break;
+		case 2:
+			System.out.println("Enter the doubles' 2D array");
+			double[][] doubleArray = new double[M][N];
+			for (int i = 0; i < M; i++) {
+				for (int j = 0; j < N; j++) {
+					doubleArray[i][j] = scanner.nextDouble();
+
 				}
-				out.flush();
-				out.close();
-				
+			}
+			for (int i = 0; i < M; i++) {
+				for (int j = 0; j < N; j++) {
+					out.print(doubleArray[i][j] + " ");
+				}
+				out.println();
+			}
+			break;
+		case 3:
+			System.out.println("Enter the Boolean array");
+			boolean[][] booleanArray = new boolean[M][N];
+			for (int i = 0; i < M; i++) {
+				for (int j = 0; j < N; j++) {
+					booleanArray[i][j] = scanner.nextBoolean();
+				}
+			}
+			for (int i = 0; i < M; i++) {
+				for (int j = 0; j < N; j++) {
+					out.print(booleanArray[i][j] + " ");
+				}
+				out.println();
+			}
+			break;
+		}
+		out.flush();
+		out.close();
+
 	}
 
+	/************************* Sum Equal to zero *************************/
+	int Number;
+
+	public int[] getDataSum() {
+		System.out.println("Enter the number of integers");
+		Number = scanner.nextInt();
+		int[] integerArray = new int[Number];
+		System.out.println("Enter the numbers");
+		for (int i = 0; i < Number; i++) {
+			integerArray[i] = scanner.nextInt();
+		}
+		return integerArray;
+
+	}
+
+	public void findingTriplets(int Array[]) {
+		int count = 0;
+		int length = Array.length;
+
+		for (int i = 0; i < length - 2; i++) {
+			for (int j = 1 + i; j < length - 1; j++) {
+				for (int k = 1 + j; k < length; k++) {
+					if (Array[i] + Array[j] + Array[k] == 0) {
+						count++;
+						System.out.println(Array[i] + "," + Array[j] + "," + Array[k]);
+					}
+				}
+			}
+		}
+		System.out.println(count);
+	}
+
+	/****************** Distance problem ********************/
+	int x;
+	int y;
+
+	public void getCoordinates() {
+		System.out.println("Enter x and y");
+		x = scanner.nextInt();
+		y = scanner.nextInt();
+		distance(x, y);
+
+	}
+
+	public double distance(int a, int b) {
+		Double x = Double.valueOf(a);
+		Double y = Double.valueOf(b);
+		double base = x;
+		double exp = 2;
+		double xsquare = Math.pow(base, exp);
+		double base1 = y;
+		double exp1 = 2;
+		double ysquare = Math.pow(base1, exp1);
+		double sumOfSquares = xsquare + ysquare;
+		double distance = Math.sqrt(sumOfSquares);
+
+		System.out.println("Eucledian distance between (x,y) and origin is " + distance);
+
+		return distance;
+
+	}
+
+	/******************* Permutations of a string **********************/
+
+	/******************** Stopwatch problem *************************/
+				public double stopWatch(){
+					long startTime = System.currentTimeMillis();
+							for(int i=0;i<100000000;i++){
+								i = i+1;
+								
+							}
+							long elapsedTime =  System.currentTimeMillis() - startTime;
+							return elapsedTime;
+							
+				}
+		/*******************Quadratic problem************************/
+				int a;
+				int b;
+				int c;
+				
+				public void getQuadraticData(){
+						System.out.println("Enter the value of a,b and c");
+						a = scanner.nextInt();
+						b=scanner.nextInt();
+						c = scanner.nextInt();
+						double delta = (b*b) -( 4*a*c);
+						double x1 = (-b + Math.sqrt(delta))/(2*a);
+						double x2 = (-b - Math.sqrt(delta))/(2*a);	
+						System.out.println("The two roots are : " + x1 + " and "  + x2);
+				}
+				/***********************Windchill problem******************/
+				double t,v;
+				public void windChill(){
+					System.out.println("ENter t and v ");
+					t = scanner.nextDouble();
+					v = scanner.nextDouble();
+					double w;
+					double base = v;
+					double exp= 0.16;
+					w = 35.74 + 0.6215*t + (0.4275*t -35.75)*(Math.pow(base, exp));
+					System.out.println("Wind chill is  " + w );
+				}
 }
