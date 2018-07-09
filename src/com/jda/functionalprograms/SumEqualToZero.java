@@ -2,10 +2,12 @@ package com.jda.functionalprograms;
 
 import com.jda.utility.Utility;
 
-public class TwoDArray {
+public class SumEqualToZero {
 			public static void main(String[] args){
 					Utility utility = new Utility();
-					utility.getData();
-					utility.switchMethod();					
+					int[] Array = utility.getDataSum();
+					utility.findingTriplets(Array);
+					
+					
 			}
 }
