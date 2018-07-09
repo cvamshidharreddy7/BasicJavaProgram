@@ -2,6 +2,7 @@ package com.jda.utility;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -329,41 +330,67 @@ public class Utility {
 	/******************* Permutations of a string **********************/
 
 	/******************** Stopwatch problem *************************/
-				public double stopWatch(){
-					long startTime = System.currentTimeMillis();
-							for(int i=0;i<100000000;i++){
-								i = i+1;
-								
-							}
-							long elapsedTime =  System.currentTimeMillis() - startTime;
-							return elapsedTime;
-							
-				}
-		/*******************Quadratic problem************************/
-				int a;
-				int b;
-				int c;
+	public double stopWatch() {
+		long startTime = System.currentTimeMillis();
+		for (int i = 0; i < 100000000; i++) {
+			i = i + 1;
+
+		}
+		long elapsedTime = System.currentTimeMillis() - startTime;
+		return elapsedTime;
+
+	}
+
+	/******************* Quadratic problem ************************/
+	int a;
+	int b;
+	int c;
+
+	public void getQuadraticData() {
+		System.out.println("Enter the value of a,b and c");
+		a = scanner.nextInt();
+		b = scanner.nextInt();
+		c = scanner.nextInt();
+		double delta = (b * b) - (4 * a * c);
+		double x1 = (-b + Math.sqrt(delta)) / (2 * a);
+		double x2 = (-b - Math.sqrt(delta)) / (2 * a);
+		System.out.println("The two roots are : " + x1 + " and " + x2);
+	}
+
+	/*********************** Windchill problem ******************/
+	double t, v;
+
+	public void windChill() {
+		System.out.println("ENter t and v ");
+		t = scanner.nextDouble();
+		v = scanner.nextDouble();
+		double w;
+		double base = v;
+		double exp = 0.16;
+		w = 35.74 + 0.6215 * t + (0.4275 * t - 35.75) * (Math.pow(base, exp));
+		System.out.println("Wind chill is  " + w);
+	}
+
+	/*********** Algorithmic Programs *****************/
+
+	/**********Anagram Detection ******************/
+			public void anagramDetection(){
+				System.out.println("Enter the strings you want to compare" );
+				String first = scanner.nextLine();
+				String second = scanner.nextLine();
+				first = first.replaceAll("\\s","");
+				second= second.replaceAll("\\s","");
+				first = first.toLowerCase();
+				second=second.toLowerCase();
+				char[] firstArray =first.toCharArray();
+				char[] secondArray =second.toCharArray();
+				if(firstArray.length != secondArray.length) System.out.println("Not Anagrams!");
+				else{		
+					Arrays.sort(firstArray);
+		Arrays.sort(secondArray);
+		if(Arrays.equals(firstArray, secondArray)) System.out.println("Anagrams");
+		else System.out.println("Anagrams");
+		}
 				
-				public void getQuadraticData(){
-						System.out.println("Enter the value of a,b and c");
-						a = scanner.nextInt();
-						b=scanner.nextInt();
-						c = scanner.nextInt();
-						double delta = (b*b) -( 4*a*c);
-						double x1 = (-b + Math.sqrt(delta))/(2*a);
-						double x2 = (-b - Math.sqrt(delta))/(2*a);	
-						System.out.println("The two roots are : " + x1 + " and "  + x2);
-				}
-				/***********************Windchill problem******************/
-				double t,v;
-				public void windChill(){
-					System.out.println("ENter t and v ");
-					t = scanner.nextDouble();
-					v = scanner.nextDouble();
-					double w;
-					double base = v;
-					double exp= 0.16;
-					w = 35.74 + 0.6215*t + (0.4275*t -35.75)*(Math.pow(base, exp));
-					System.out.println("Wind chill is  " + w );
-				}
+			}
 }
