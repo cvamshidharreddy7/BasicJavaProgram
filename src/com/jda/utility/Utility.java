@@ -326,4 +326,17 @@ public class Utility {
 
 	}
 
+	/******************* Permutations of a string **********************/
+
+	/******************** Stopwatch problem *************************/
+				public double stopWatch(){
+					long startTime = System.currentTimeMillis();
+							for(int i=0;i<100000000;i++){
+								i = i+1;
+								
+							}
+							long elapsedTime =  System.currentTimeMillis() - startTime;
+							return elapsedTime;
+							
+				}
 }
