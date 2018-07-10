@@ -373,24 +373,103 @@ public class Utility {
 
 	/*********** Algorithmic Programs *****************/
 
-	/**********Anagram Detection ******************/
-			public void anagramDetection(){
-				System.out.println("Enter the strings you want to compare" );
-				String first = scanner.nextLine();
-				String second = scanner.nextLine();
-				first = first.replaceAll("\\s","");
-				second= second.replaceAll("\\s","");
-				first = first.toLowerCase();
-				second=second.toLowerCase();
-				char[] firstArray =first.toCharArray();
-				char[] secondArray =second.toCharArray();
-				if(firstArray.length != secondArray.length) System.out.println("Not Anagrams!");
-				else{		
-					Arrays.sort(firstArray);
-		Arrays.sort(secondArray);
-		if(Arrays.equals(firstArray, secondArray)) System.out.println("Anagrams");
-		else System.out.println("Anagrams");
+	/********** Anagram Detection ******************/
+	public void anagramDetection() {
+		System.out.println("Enter the strings you want to compare");
+		String first = scanner.nextLine();
+		String second = scanner.nextLine();
+		first = first.replaceAll("\\s", "");
+		second = second.replaceAll("\\s", "");
+		first = first.toLowerCase();
+		second = second.toLowerCase();
+		char[] firstArray = first.toCharArray();
+		char[] secondArray = second.toCharArray();
+		if (firstArray.length != secondArray.length)
+			System.out.println("Not Anagrams!");
+		else {
+			Arrays.sort(firstArray);
+			Arrays.sort(secondArray);
+			if (Arrays.equals(firstArray, secondArray))
+				System.out.println("Anagrams");
+			else
+				System.out.println("Anagrams");
 		}
-				
+
+	}
+	/***** Prime numbers *********/
+	ArrayList<Integer> arrli = new ArrayList<Integer>();
+	public ArrayList<Integer> primeNumbers(){
+
+	
+	System.out.println("The prime numbers are:");
+	for(int i=2;i<1000;i++){
+		if(primeChecker(i)) {
+			arrli.add(i);
+			System.out.println(i + ",");
+		}
+	}
+	return arrli;
+	
+	
+}
+	public boolean primeAnagramDetection(String first,String second) {
+		first = first.replaceAll("\\s", "");
+		second = second.replaceAll("\\s", "");
+		first = first.toLowerCase();
+		second = second.toLowerCase();
+		char[] firstArray = first.toCharArray();
+		char[] secondArray = second.toCharArray();
+		if (firstArray.length != secondArray.length)
+			return false;
+		else {
+			Arrays.sort(firstArray);
+			Arrays.sort(secondArray);
+			if (Arrays.equals(firstArray, secondArray))
+				return true;
+			else
+				return false;
+		}
+		
+
+	}
+	public void anagramCheck(ArrayList<Integer> arrli){
+		System.out.println("Anagrams are: ");
+				for(int i=0;i<arrli.size()-1;i++){
+					for(int j=i+1;j<arrli.size();j++){
+						if(primeAnagramDetection(arrli.get(i).toString(),arrli.get(j).toString())){
+							System.out.println("("+arrli.get(i) + ","+ arrli.get(j) + ")");
+						}
+					}
+				}
+	}
+public void palindromeCheck(ArrayList<Integer> arrli){
+		String array[] = new String[arrli.size()];
+		for(int i=0;i<arrli.size();i++){
+				array[i] = arrli.get(i).toString();
+		}
+		System.out.println("The palindrome numbers are: ");
+		for(int i=0;i<array.length;i++){
+			boolean flag =true;
+			String  a=array[i];
+			int x=0,y =a.length()-1;
+			while(x<=y){
+				if(a.charAt(x) != a.charAt(y)) flag = false;
+				x++;y--;
 			}
+			if(flag==true) System.out.println(a);
+			
+		}
+}
+
+public boolean primeChecker(int n){
+	boolean flag = true;
+	for(int i=2;i<=Math.sqrt(n);i++){
+		if(n%i ==0) {
+			flag =false;
+			return flag;
+			}		
+	}
+	return flag;
+}
+
 }
