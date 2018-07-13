@@ -527,9 +527,9 @@ public class Utility {
 				return binarySearch(arr, value, low, mid - 1);
 			if (arr[mid].compareTo(value) < 0)
 				return binarySearch(arr, value, mid + 1, high);
-			if (arr[mid].compareTo(value) == 0)
+			if (arr[mid].compareTo(value) == 0)				
 				return true;
-		}
+					}
 		return false;
 	}
 
@@ -568,32 +568,48 @@ public class Utility {
 		}
 		return arr;
 	}
+
 	/*********** Finding Your Number ***********/
-	public int getN(){
+	public int getN() {
 		return scanner.nextInt();
 	}
-	public int binarySearch(int low,int high){
-		int mid = low+(high-low)/2;
+
+	public int binarySearch(int low, int high) {
+		int mid = low + (high - low) / 2;
 		boolean var;
-		int range=high-low;
-		while(range>1){
-		System.out.println("mid is  " + mid);
-		System.out.println("Ask if it's between low and mid");
-		var = scanner.nextBoolean();
-		if(var ){
-			System.out.println("Now the range is:" + low + " , " + mid);
-			return binarySearch(low,mid);
-		}
-		else {
-			System.out.println("Now the range is " + (mid+1) + " , " + high);
-			return binarySearch(mid+1,high);
-		}
+		int range = high - low;
+		while (range > 1) {
+			System.out.println("mid is  " + mid);
+			System.out.println("Ask if it's between low and mid");
+			var = scanner.nextBoolean();
+			if (var) {
+				System.out.println("Now the range is:" + low + " , " + mid);
+				return binarySearch(low, mid);
+			} else {
+				System.out.println("Now the range is " + (mid + 1) + " , " + high);
+				return binarySearch(mid + 1, high);
+			}
 		}
 		System.out.println("Ask if it's equal to low");
 		var = scanner.nextBoolean();
-		if(var) System.out.println("The number you guessed is " + low);
-		else System.out.println("The number you guessed is "+high);
+		if (var)
+			System.out.println("The number you guessed is " + low);
+		else
+			System.out.println("The number you guessed is " + high);
 		return 0;
 	}
 
+	/********* Binary search the word from the list *********/
+	public String getWord(){
+		return scanner.next();
+	}
+	public ArrayList<String> getWords(){
+			ArrayList<String> arrli = new ArrayList<String>();
+			System.out.println("Enter the stream of words and enter -1 when you want to stop");
+				while(scanner.next() != "-1"){
+					if(scanner.next()!=",") arrli.add(scanner.next());
+						}
+					return arrli;
+				}
+	
 }
