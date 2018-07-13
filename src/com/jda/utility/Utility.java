@@ -219,6 +219,7 @@ public class Utility {
 			for (int i = 0; i < M; i++) {
 				for (int j = 0; j < N; j++) {
 					integerArray[i][j] = scanner.nextInt();
+
 				}
 			}
 			for (int i = 0; i < M; i++) {
@@ -611,5 +612,5 @@ public class Utility {
 						}
 					return arrli;
 				}
-	
+
 }
