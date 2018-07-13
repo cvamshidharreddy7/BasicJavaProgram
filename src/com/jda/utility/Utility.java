@@ -572,9 +572,28 @@ public class Utility {
 	public int getN(){
 		return scanner.nextInt();
 	}
-	public void binarySearch(int low,int high){
+	public int binarySearch(int low,int high){
 		int mid = low+(high-low)/2;
-		
+		boolean var;
+		int range=high-low;
+		while(range>1){
+		System.out.println("mid is  " + mid);
+		System.out.println("Ask if it's between low and mid");
+		var = scanner.nextBoolean();
+		if(var ){
+			System.out.println("Now the range is:" + low + " , " + mid);
+			return binarySearch(low,mid);
+		}
+		else {
+			System.out.println("Now the range is " + (mid+1) + " , " + high);
+			return binarySearch(mid+1,high);
+		}
+		}
+		System.out.println("Ask if it's equal to low");
+		var = scanner.nextBoolean();
+		if(var) System.out.println("The number you guessed is " + low);
+		else System.out.println("The number you guessed is "+high);
+		return 0;
 	}
 
 }
