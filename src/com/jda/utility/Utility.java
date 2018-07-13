@@ -396,23 +396,24 @@ public class Utility {
 		}
 
 	}
+
 	/***** Prime numbers *********/
 	ArrayList<Integer> arrli = new ArrayList<Integer>();
-	public ArrayList<Integer> primeNumbers(){
 
-	
-	System.out.println("The prime numbers are:");
-	for(int i=2;i<1000;i++){
-		if(primeChecker(i)) {
-			arrli.add(i);
-			System.out.println(i + ",");
+	public ArrayList<Integer> primeNumbers() {
+
+		System.out.println("The prime numbers are:");
+		for (int i = 2; i < 1000; i++) {
+			if (primeChecker(i)) {
+				arrli.add(i);
+				System.out.println(i + ",");
+			}
 		}
+		return arrli;
+
 	}
-	return arrli;
-	
-	
-}
-	public boolean primeAnagramDetection(String first,String second) {
+
+	public boolean primeAnagramDetection(String first, String second) {
 		first = first.replaceAll("\\s", "");
 		second = second.replaceAll("\\s", "");
 		first = first.toLowerCase();
@@ -429,47 +430,151 @@ public class Utility {
 			else
 				return false;
 		}
-		
 
 	}
-	public void anagramCheck(ArrayList<Integer> arrli){
+
+	public void anagramCheck(ArrayList<Integer> arrli) {
 		System.out.println("Anagrams are: ");
-				for(int i=0;i<arrli.size()-1;i++){
-					for(int j=i+1;j<arrli.size();j++){
-						if(primeAnagramDetection(arrli.get(i).toString(),arrli.get(j).toString())){
-							System.out.println("("+arrli.get(i) + ","+ arrli.get(j) + ")");
-						}
-					}
+		for (int i = 0; i < arrli.size() - 1; i++) {
+			for (int j = i + 1; j < arrli.size(); j++) {
+				if (primeAnagramDetection(arrli.get(i).toString(), arrli.get(j).toString())) {
+					System.out.println("(" + arrli.get(i) + "," + arrli.get(j) + ")");
 				}
+			}
+		}
 	}
-public void palindromeCheck(ArrayList<Integer> arrli){
+
+	public void palindromeCheck(ArrayList<Integer> arrli) {
 		String array[] = new String[arrli.size()];
-		for(int i=0;i<arrli.size();i++){
-				array[i] = arrli.get(i).toString();
+		for (int i = 0; i < arrli.size(); i++) {
+			array[i] = arrli.get(i).toString();
 		}
 		System.out.println("The palindrome numbers are: ");
-		for(int i=0;i<array.length;i++){
-			boolean flag =true;
-			String  a=array[i];
-			int x=0,y =a.length()-1;
-			while(x<=y){
-				if(a.charAt(x) != a.charAt(y)) flag = false;
-				x++;y--;
+		for (int i = 0; i < array.length; i++) {
+			boolean flag = true;
+			String a = array[i];
+			int x = 0, y = a.length() - 1;
+			while (x <= y) {
+				if (a.charAt(x) != a.charAt(y))
+					flag = false;
+				x++;
+				y--;
 			}
-			if(flag==true) System.out.println(a);
-			
-		}
-}
+			if (flag == true)
+				System.out.println(a);
 
-public boolean primeChecker(int n){
-	boolean flag = true;
-	for(int i=2;i<=Math.sqrt(n);i++){
-		if(n%i ==0) {
-			flag =false;
-			return flag;
-			}		
+		}
 	}
-	return flag;
-}
+
+	public boolean primeChecker(int n) {
+		boolean flag = true;
+		for (int i = 2; i <= Math.sqrt(n); i++) {
+			if (n % i == 0) {
+				flag = false;
+				return flag;
+			}
+		}
+		return flag;
+	}
+
+	/*******************
+	 * Searching and sorting
+	 * 
+	 * @return
+	 ***************/
+	public int getZ() {
+		return scanner.nextInt();
+
+	}
+
+	public int getValue() {
+		return scanner.nextInt();
+	}
+
+	public String getStringValue() {
+		return scanner.next();
+	}
+
+	public Integer[] getIntegerArray() {
+		System.out.println("Enter the number of integers");
+		int n = scanner.nextInt();
+		Integer[] arr = new Integer[n];
+		System.out.println("Enter the array");
+		for (int i = 0; i < n; i++) {
+			arr[i] = scanner.nextInt();
+		}
+		return arr;
+	}
+
+	public String[] getStringArray() {
+		System.out.println("Enter the number of Strings");
+		int n = scanner.nextInt();
+		String[] arr = new String[n];
+		System.out.println("Enter the array");
+		for (int i = 0; i < n; i++) {
+			arr[i] = scanner.next();
+		}
+		return arr;
+
+	}
+
+	public <T extends Comparable<T>> boolean binarySearch(T[] arr, T value, int low, int high) {
+		int mid = low + (high - low) / 2;
+		while (low < high) {
+			Arrays.sort(arr);
+
+			if (arr[mid].compareTo(value) > 0)
+				return binarySearch(arr, value, low, mid - 1);
+			if (arr[mid].compareTo(value) < 0)
+				return binarySearch(arr, value, mid + 1, high);
+			if (arr[mid].compareTo(value) == 0)
+				return true;
+		}
+		return false;
+	}
+
+	/******** Sorting *********/
+	public <T extends Comparable<T>> T[] insertionSort(T[] arr) {
+		int n = arr.length;
+		for (int i = 0; i < n; i++) {
+			for (int j = i; j > 0; j--) {
+				if (arr[j - 1].compareTo(arr[j]) > 0) {
+					T temp = arr[j - 1];
+					arr[j - 1] = arr[j];
+					arr[j] = temp;
+				}
+			}
+		}
+		return arr;
+
+	}
+
+	public <T extends Comparable<T>> T[] bubbleSort(T[] arr) {
+		int n = arr.length;
+		T temp;
+		boolean swap = true;
+		for (int i = 0; i < n; i++) {
+			swap = false;
+			for (int j = 0; j < n - i - 1; j++) {
+				if (arr[j].compareTo(arr[j + 1]) > 0) {
+					temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+					swap = true;
+				}
+			}
+			if (swap == false)
+				break;
+		}
+		return arr;
+	}
+	/*********** Finding Your Number ***********/
+	public int getN(){
+		return scanner.nextInt();
+	}
+	public void binarySearch(int low,int high){
+		int mid = low+(high-low)/2;
+		
+	}
 
 }
