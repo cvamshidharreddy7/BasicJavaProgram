@@ -7,6 +7,6 @@ public class SumEqualToZero {
 			Utility utility = new Utility();
 			int[] Array = utility.getDataSum();
 			utility.findingTriplets(Array);
-			
+    }
 		}
-}
+
