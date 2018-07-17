@@ -7,6 +7,8 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
+import javax.xml.soap.Node;
+
 import com.jda.functionalprograms.PowersOfTwo;
 
 public class Utility {
@@ -151,8 +153,8 @@ public class Utility {
 		ArrayList<Integer> arrLi = new ArrayList<Integer>();
 		/*
 		 * System.out.println("Please enter the numbers and enter -1 to stop");
-		 * while(scanner.nextInt() != -1){ arrLi.add(scanner.nextInt()); } int[]
-		 * arr = new int[arrLi.size()]; for(int i=0;i<arrLi.size();i++){
+		 * while(scanner.nextInt() != -1){ arrLi.add(scanner.nextInt()); } int[] arr =
+		 * new int[arrLi.size()]; for(int i=0;i<arrLi.size();i++){
 		 * 
 		 * arr[i] = Integer.parseInt(arrLi.get(i).toString()); }
 		 * 
@@ -521,16 +523,16 @@ public class Utility {
 
 	public <T extends Comparable<T>> boolean binarySearch(T[] arr, T value, int low, int high) {
 		int mid = low + (high - low) / 2;
-		while (low < high) {
+		while (low <= high) {
 			Arrays.sort(arr);
 
 			if (arr[mid].compareTo(value) > 0)
 				return binarySearch(arr, value, low, mid - 1);
 			if (arr[mid].compareTo(value) < 0)
 				return binarySearch(arr, value, mid + 1, high);
-			if (arr[mid].compareTo(value) == 0)				
+			if (arr[mid].compareTo(value) == 0)
 				return true;
-					}
+		}
 		return false;
 	}
 
@@ -601,16 +603,218 @@ public class Utility {
 	}
 
 	/********* Binary search the word from the list *********/
-	public String getWord(){
+	public String getWord() {
 		return scanner.next();
 	}
-	public ArrayList<String> getWords(){
-			ArrayList<String> arrli = new ArrayList<String>();
-			System.out.println("Enter the stream of words and enter -1 when you want to stop");
-				while(scanner.next() != "-1"){
-					if(scanner.next()!=",") arrli.add(scanner.next());
-						}
-					return arrli;
-				}
 
+	/******* Merge Sort ********/
+	public String[] mergeSort(String[] arr, int low, int high) {
+		if (low < high) {
+			int mid = low + (high - low) / 2;
+			mergeSort(arr, low, mid);
+			mergeSort(arr, mid + 1, high);
+			merge(arr, low, mid, high);
+		}
+		return arr;
+	}
+
+	public void merge(String arr[], int low, int mid, int high) {
+		int s1 = mid - low + 1;
+		int s2 = high - mid;
+		String L[] = new String[s1];
+		String R[] = new String[s2];
+		for (int i = 0; i < s1; i++)
+			L[i] = arr[low + i];
+		for (int i = 0; i < s2; i++)
+			R[i] = arr[mid + 1 + i];
+		int x = 0, y = 0, z = low;
+		while (x < s1 && y < s2) {
+			if (L[x].compareTo(R[y]) <= 0) {
+				arr[z] = L[x];
+				x++;
+			} else {
+				arr[z] = R[y];
+				y++;
+			}
+			z++;
+		}
+		while (x < s1) {
+			arr[z] = L[x];
+			x++;
+			z++;
+		}
+		while (y < s2) {
+			arr[z] = R[y];
+			y++;
+			z++;
+		}
+	}
+
+	/***** Vending Machine *******/
+	public int getChange() {
+		return scanner.nextInt();
+	}
+
+	/*
+	 * public int vending(int[] arr, int[] count, int value, int high, int index,
+	 * int index2) { // Initially high=1000;
+	 * 
+	 * while (value - high >= 0) { value = value - high; count[index]++; } index2--;
+	 * high = arr[index2]; index--; return vending(arr, count, value, high, index,
+	 * index2); }
+	 */
+	public int[] vending(int[] notes, int change) {
+		
+		int[] numberofnotes = new int[notes.length];
+		for (int i = notes.length - 1; i >= 0; i--) {
+			if (change / notes[i] >= 1) {
+				int x = change / notes[i];
+				numberofnotes[i] = x;
+				change = change - ((int) (change / notes[i]) * notes[i]);
+			}
+		}
+		return numberofnotes;
+	}
+
+	/******* Day of the week ********/
+	public int getMonth() {
+		return scanner.nextInt();
+	}
+
+	public int getDay() {
+		return scanner.nextInt();
+	}
+
+	public int getYear1() {
+		return scanner.nextInt();
+	}
+
+	public int dayOfWeek(int m, int d, int y) {
+		int y0 = y - (14 - m) / 12;
+		int x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
+		int m0 = m + 12 * ((14 - m) * 12) - 2;
+		int d0 = (d + x + (31 * m0) / 12) % 7;
+		return d0;
+	}
+
+	/****** Temperature conversion *******/
+	public Double getTemperature() {
+		return scanner.nextDouble();
+	}
+
+	public Double convertTemperature(Double temp, int value) {
+		double temperature;
+		if (value == 1) {
+			temperature = (temp * 9 / 5) + 32;
+		} else {
+			temperature = (temp - 32) * 5 / 9;
+		}
+		return temperature;
+	}
+
+	/**** Monthly payment *******/
+	public Double getP() {
+		return scanner.nextDouble();
+	}
+
+	public Double getY() {
+		return scanner.nextDouble();
+	}
+
+	public Double getR() {
+		return scanner.nextDouble();
+	}
+
+	public Double getPayment(Double P, Double Y, Double R) {
+		Double n = 12 * Y;
+		Double r = R / (12 * 100);
+		Double den = 1 - Math.pow((1 + r), -n);
+		Double payment = (P * r) / den;
+		return payment;
+	}
+
+	/***** Sqrt *****/
+	public Double getSqrt(Double c) {
+		double t = c;
+		while (Math.abs(t - (c / t)) > (1e-15) * t) {
+			t = ((c / t) + t) / 2;
+		}
+		return t;
+	}
+
+	/***** To Binary *****/
+	public Integer[] getBinary(int n) {
+		int[] binaryNum = new int[1000];
+		int i = 0;
+		while (n > 0) {
+			binaryNum[i] = n % 2;
+			n = n / 2;
+			i++;
+		}
+		ArrayList<Integer> arrli = new ArrayList<Integer>();
+
+		for (int j = i - 1; j >= 0; j--)
+			arrli.add(binaryNum[j]);
+		Integer arr[] = arrli.toArray(new Integer[arrli.size()]);
+		return arr;
+	}
+
+	/**** Swappping Nibbles ******/
+
+	public int[] swapNibbles(int n) {
+		Integer[] arr = getBinary(n);
+		int[] array = new int[arr.length];
+		for (int i = 0; i < arr.length; i++) {
+			array[i] = arr[i].intValue();
+		}
+		int[] result = new int[8];
+		int[] array1 = new int[4];
+		int[] array2 = new int[4];
+		
+		for(int i=arr.length-1,j=3;j>=0;i--,j--){
+			array1[j]=arr[i];			
+		}
+		int k = 3;
+		for (int i = array.length - 5; i >= 0; i--, k--) {
+			array2[k] = array[i];
+		}
+		while (k >= 0) {
+			array2[k] = 0;
+			k--;
+		}
+		for (int l = 0; l < 4; l++) {
+			result[l] = array1[l];
+		}
+		for (int l = 0; l < 4; l++) {
+			result[l + 4] = array2[l];
+		}
+		return result;
+	}
+	/**** Data Structures *****/
+	/***** UnOrdered list 
+	 * @param <T>*****/
+		public class LinkedList<T>{
+			Node head;
+			public class Node{
+				T data;
+				Node next;
+			public Node(T d){
+					data =d;
+					next = null;
+				}
+			}
+		 public void push(T newData) {
+			 Node newNode = new Node(newData);
+			 newNode.next = head;
+			 head = newNode;
+		 }
+		 public void print() {
+			 Node n = head;
+			 while(n!=null) {
+				 System.out.println(n.data + " ");
+				 n = n.next;
+			 }
+		 }
+		}
+		
 }
