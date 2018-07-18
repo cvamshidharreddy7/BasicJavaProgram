@@ -6,7 +6,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.jda.utility.LinkedList;
+import com.jda.utility.UnOrderedLinkedList;
 import com.jda.utility.Utility;
 
 public class UnOrderedList {
@@ -18,7 +18,7 @@ public class UnOrderedList {
 		while(scanner.hasNext()) {
 			arrli.add(scanner.next());
 		}
-		LinkedList<String> linkedList = new LinkedList<String>();
+		UnOrderedLinkedList<String> linkedList = new UnOrderedLinkedList<String>();
 		for(int i=0;i<arrli.size();i++) {
 			linkedList.add(arrli.get(i));
 		}

@@ -1,6 +1,5 @@
 package com.jda.utility;
-
-public class LinkedList<T> {
+public class OrderedLinkedList<T extends Comparable<T> > {
 	private Node<T> first;
 	private Node<T> last;
 	private int size;
@@ -29,12 +28,12 @@ public class LinkedList<T> {
 			this.next = next;
 		}		
 	}
-	public LinkedList() {
+	public OrderedLinkedList() {
 		Node<T> var = new Node<T>();
 		this.first = var;
 		this.last=this.first;
 	}
-	public void add(T data) {
+	/*public void add(T data) {
 		Node<T> newData = new Node<T>(data);
 		if(this.first.getData() == null) {
 			this.first = newData;
@@ -45,6 +44,27 @@ public class LinkedList<T> {
 			this.last = newData;
 		}
 		size++;
+	}
+*/
+	
+	public void add(T data) {
+		Node<T> newData = new Node<T>(data);
+		Node<T> current = first;
+		 int z= (first.getData()).compareTo(newData.getData());
+		 
+		if(first == null || z>=0) {
+			newData.setNext(first);
+			first = newData;			
+		}
+		else {
+			current = first;
+			int x= current.getNext().data.compareTo(newData.getData());
+			while(current.getNext() !=null && x<0) {
+				current = current.getNext();
+				}
+			newData.next= current.getNext();
+			current.next = newData;		
+		}
 	}
 	
 	public void remove(T data) {
