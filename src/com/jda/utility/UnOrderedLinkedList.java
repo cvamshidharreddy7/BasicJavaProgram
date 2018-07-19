@@ -46,8 +46,57 @@ public class UnOrderedLinkedList<T> {
 		}
 		size++;
 	}
+	public void addFirst(T data) {
+		Node<T> newData = new Node<T>(data);
+		if(this.first.getData() == null) {
+			this.first = newData;
+			this.last = this.first;
+		}
+		else {
+			newData.setNext(first);
+			first = newData;
+		}
+	}
 
-	
+	public void removeLast() {
+		Node<T> current = first;
+		Node<T> currentNext = current.getNext();
+		
+		while(currentNext.getNext()!=null) {
+			currentNext = currentNext.getNext();
+			current = current.getNext();
+		}
+		current.setNext(null);
+		
+	}
+	public void removeFirst() {
+		Node<T> current = first;
+		if(this.first.getData()==null) {
+			//do nothing,already empty
+		}
+		else {
+			if(this.first.getNext()==null) {
+				this.first.setData(null);
+			}
+			else {
+				current = first.getNext();
+				this.first=current;
+			}
+		}
+	}
+	public T lastValue() {
+		Node<T> current = first;
+		//Node<T> currentNext = current.getNext();
+		while(current.getNext()!=null) {
+			//currentNext = currentNext.getNext();
+			current = current.getNext();
+		}
+		return current.getData();
+	}
+	public boolean isEmpty() {
+		if(first.getNext()==null) return true;
+		else return false;
+	}
 	public void remove(T data) {
 		Node<T> current = first;
 		if(this.first.getData().equals(data)) {

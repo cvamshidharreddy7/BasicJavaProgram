@@ -45,6 +45,7 @@ public class UnOrderedList {
 		}
 		System.out.println("Linked list now is: ");
 		linkedList.print();
+		
 		PrintStream o = new PrintStream(new File("A.txt"));
 		PrintStream console = System.out;
 		System.setOut(o);
