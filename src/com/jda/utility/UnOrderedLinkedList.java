@@ -60,14 +60,14 @@ public class UnOrderedLinkedList<T> {
 
 	public void removeLast() {
 		Node<T> current = first;
-		Node<T> currentNext = current.getNext();
+		Node<T> temp = first;
 		
-		while(currentNext.getNext()!=null) {
-			currentNext = currentNext.getNext();
-			current = current.getNext();
+		while(current != last) {
+			temp=current;
+			current=current.next;
 		}
-		current.setNext(null);
-		
+		last =temp;
+		last.setNext(null);	
 	}
 	public void removeFirst() {
 		Node<T> current = first;
@@ -84,6 +84,11 @@ public class UnOrderedLinkedList<T> {
 			}
 		}
 	}
+	public T firstValue() {
+		Node<T> current = first;
+		return current.getData();
+		
+	}
 	public T lastValue() {
 		Node<T> current = first;
 		//Node<T> currentNext = current.getNext();
@@ -93,6 +98,15 @@ public class UnOrderedLinkedList<T> {
 		}
 		return current.getData();
 	}
+	/*public T getFirstData() {
+		Node<T> current = first;
+		return current.getData();
+	}
+	public T getLastData() {
+		Node<T> currentBack = last;
+		return currentBack.getData();
+	}
+	*/
 	public boolean isEmpty() {
 		if(first.getNext()==null) return true;
 		else return false;

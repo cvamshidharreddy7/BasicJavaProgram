@@ -9,13 +9,31 @@ public class Deque<T extends Comparable> {
 	public void addRear(T item) {
 		q.add(item);
 	}
-	public void removeFront() {
+	public T removeFront() {
+		T frontValue = q.firstValue();
 		q.removeFirst();
+		return frontValue;
 	}
-	public void removeRear() {
+	public T removeRear() {
+		T rearValue = q.lastValue();
 		q.removeLast();
+		return rearValue;
 	}
-	public void isEmpty() {
-		
+	public boolean isEmpty() {
+		if(q.getSize()==0) return true;
+		else return false;
 	}
+	public int size() {
+		return q.getSize();		
+	}
+	public void print() {
+		q.print();
+	}
+	public T getFrontData() {
+		return q.firstValue();
+	}
+	public T getLastData() {
+		return q.lastValue();
+	}
+	
 }

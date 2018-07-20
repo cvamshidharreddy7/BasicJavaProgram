@@ -42,6 +42,7 @@ public class Queue<T extends Comparable> {
 		this.first = var;
 		this.last = this.first;
 	}
+	
 	public int enqueue(T data,int value,int totalAmount) {
 		 totalAmount = calculatetotalAmount(data,value,totalAmount);
 		//System.out.println("Calculated total amount is" + totalAmount);
