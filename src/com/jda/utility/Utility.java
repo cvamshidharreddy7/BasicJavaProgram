@@ -700,11 +700,11 @@ public class Utility {
 		return scanner.nextInt();
 	}
 
-	public int dayOfWeek(int m, int d, int y) {
-		int y0 = y - (14 - m) / 12;
-		int x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
-		int m0 = m + 12 * ((14 - m) * 12) - 2;
-		int d0 = (d + x + (31 * m0) / 12) % 7;
+	public int dayOfWeek(int m,int d,int y){
+		int y0 = y-(14-m) /12;
+		int x=y0+(y0/4)-(y0/100)+(y0/400);
+		int m0 = m + 12 * ((14-m) /12)-2;
+		int d0=(d+x+m0*31/12)%7;
 		return d0;
 	}
 
@@ -826,6 +826,36 @@ public class Utility {
 				 n = n.next;
 			 }
 		 }
+		}
+		/********Binary Search Tree*******/
+		public long factorial( int n)
+		{
+		     long res = 1;		    
+		    for (int i = 1; i <= n; ++i)
+		    {
+		        res *= i;
+		    }	 
+		    return res;
+		}
+		 
+		public long coefficient(int n,int k)
+		{
+		    long res = 1;
+		    if (k > n - k)
+		        k = n - k;
+		    for (int i = 0; i < k; ++i)
+		    {
+		        res *= (n - i);
+		        res /= (i + 1);
+		    }
+		 
+		    return res;
+		}
+		public  long catalanNumber(int n)
+		{
+		    
+		    long c = coefficient(2*n, n);
+		    return c/(n+1);
 		}
 		
 }
