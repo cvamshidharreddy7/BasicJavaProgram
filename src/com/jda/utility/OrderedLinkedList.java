@@ -49,14 +49,9 @@ public class OrderedLinkedList<T extends Comparable<T> > {
 	
 	public void add(T data) {
 		Node<T> newData = new Node<T>(data);
-		Node<T> current = first;
-		 int z= (first.getData()).compareTo(newData.getData());
-		 
-		if(first == null || z>=0) {
-			newData.setNext(first);
-			first = newData;			
-		}
-		else {
+		//Node<T> current = first;
+		 //int z= (first.getData()).compareTo(newData.getData());
+	/*	else {
 			current = first;
 			int x= current.getNext().data.compareTo(newData.getData());
 			while(current.getNext() !=null && x<0) {
@@ -64,7 +59,39 @@ public class OrderedLinkedList<T extends Comparable<T> > {
 				}
 			newData.next= current.getNext();
 			current.next = newData;		
+		} */
+		 
+		if(this.first==null) {
+			newData.setNext(first);
+			first = newData;
 		}
+		else {
+			Node<T> current = first;
+			Node<T> prev = null;
+			while(current !=null && ((current.getData()).compareTo(newData.getData())<=0)) {
+				prev = current;
+				current = current.getNext();
+			}
+			
+			
+			if(current==null) {
+				prev.setNext(newData);
+				newData.setNext(null);
+				
+			}
+			else {
+				if(current==first) {
+					newData.setNext(current);
+					first = newData;
+				}
+				else {
+					newData.setNext(current);
+					prev.setNext(newData);
+				}
+				
+			}
+		}
+		
 	}
 	
 	public void remove(T data) {

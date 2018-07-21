@@ -52,6 +52,17 @@ public class Utility {
 			flag = false;
 		return flag;
 	}
+	public String[] getMonths() {
+		String[] months = { "", "January", "February", "March",
+	            "April", "May", "June",
+	            "July", "August", "September",
+	            "October", "November", "December"};
+		return months;
+	}
+	public int[] getDays(){
+		int[] days = {0,31,28,31,30,31,30,31,31,30,31,30,31};
+	return days;
+	}
 
 	public int inputNumber() {
 		return scanner.nextInt();

@@ -18,10 +18,17 @@ public class OrderedList {
 		while(scanner.hasNext()) {
 			arrli.add(scanner.nextInt());
 		}
+		for(int i=0;i<arrli.size();i++) {
+			System.out.print(arrli.get(i)+",");
+		}
+		System.out.println();
+		
+	
 		OrderedLinkedList<Integer> linkedList = new OrderedLinkedList<Integer>();
 		for(int i=0;i<arrli.size();i++) {
 			linkedList.add(arrli.get(i));
 		}
+		/*
 		System.out.println("Linked list is: ");
 		linkedList.print();
 		int initialSize = linkedList.getSize();
@@ -41,7 +48,7 @@ public class OrderedList {
 		}
 		System.out.println("Linked list at the end is: ");
 		linkedList.print();
-		
+		*/
 	scanner.close();
 	}
 }
