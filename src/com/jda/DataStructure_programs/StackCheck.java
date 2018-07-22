@@ -15,11 +15,12 @@ public class StackCheck {
 			stack.push(String.valueOf(inputString.charAt(i)));
 		}
 		for(int i=0;i<stack.size();i++) {
-			System.out.print(stack.pop()+ ",");
+			System.out.print(stack.pop());
 			
 		}
 		System.out.println();
-		stack.print();
+		System.out.println(stack.size());
+		
 		scanner.close();
 	}
 }
