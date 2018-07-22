@@ -1,5 +1,6 @@
 package com.jda.DataStructure_programs;
 import com.jda.utility.Stack;
+import com.jda.utility.StackUsingArray;
 import com.jda.utility.Utility;
 
 public class BalancedParenthesis2 {
@@ -8,7 +9,7 @@ public class BalancedParenthesis2 {
 		Utility utility= new Utility();
 		
 		String inputString = utility.getStringValue();
-		Stack<Character> stack = new Stack<Character>();
+		StackUsingArray<Character> stack = new StackUsingArray<Character>(1000);
 		boolean check = true;
 		char[] data = inputString.toCharArray();
 		for (int i = 0; i < inputString.length(); i++) {
@@ -31,7 +32,7 @@ public class BalancedParenthesis2 {
 			check = check && true;
 		} else
 			check = false;
-		if(check==false) System.out.println("Not balanced");
-		else System.out.println("balanced");
+		if(check==false) System.out.println("Not balanced!");
+		else System.out.println("Balanced!");
 	}
 }

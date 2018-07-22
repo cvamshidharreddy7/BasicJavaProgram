@@ -10,11 +10,7 @@ public class StackUsingArray<T> {
 		this.top = -1;
 	}
 
-	public boolean isFull() {
-		if(top==size-1) return true;
-		return false;
-			}
-
+	
 	public boolean isEmpty() {
 		if(top==-1) return true;
 		else return false;
@@ -27,6 +23,10 @@ public class StackUsingArray<T> {
 		}
 		this.stackArr[++top] = value;
 	}
+	public boolean isFull() {
+		if(top==size-1) return true;
+		return false;
+			}
 
 	private void resize() {
 		T[] newStack = (T[]) new Object[this.size * 2];
