@@ -1,12 +1,13 @@
 package com.jda.DataStructure_programs;
 
 import com.jda.utility.Queue;
+import com.jda.utility.QueueBank;
 import com.jda.utility.Utility;
 
 public class Banking {
 	public static void main(String[] args) {
 		Utility utility = new Utility();
-		Queue<Integer> q = new Queue<Integer>();
+		QueueBank<Integer> q = new QueueBank<Integer>();
 		System.out.println("Enter the number of customers ");
 		int n=utility.getN();
 		int value;
