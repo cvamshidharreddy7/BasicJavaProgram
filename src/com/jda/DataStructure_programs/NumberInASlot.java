@@ -14,7 +14,7 @@ public class NumberInASlot {
 		Utility utility = new Utility();
 		File file = new File("C:\\Users\\1022279\\Desktop\\NumberInASlot.txt");
 		Scanner scanner = new Scanner(file);
-		System.out.println("Enter the number you want to n for:");
+		System.out.println("Enter the number you want to search for:");
 		int n = utility.getN();
 		ArrayList<Integer> arrLi = new ArrayList<Integer>();
 		while(scanner.hasNext()) {

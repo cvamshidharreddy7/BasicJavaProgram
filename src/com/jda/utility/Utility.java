@@ -1,3 +1,14 @@
+/*
+ * 
+ * purpose: To store all the utility methods
+ * 
+ * @author 1022279
+ * @version 1.0
+ * @since 4-07-2017 * 
+ * 
+ * 
+ * 
+ */
 package com.jda.utility;
 
 import java.io.PrintWriter;
@@ -14,32 +25,53 @@ import com.jda.functionalprograms.PowersOfTwo;
 public class Utility {
 	Scanner scanner;
 
+	/*
+	 * Constructor
+	 */
 	public Utility() {
 		scanner = new Scanner(System.in);
 	}
 
+	/*
+	 * Method to get the input name.
+	 */
 	public String inputName() {
 		return scanner.next();
 	}
 
+	/*
+	 * Method to replace string
+	 */
 	public String replaceString(String x, String name) {
 		x = x.replaceAll("<<UserName>>", name);
 		return x;
 
 	}
+	/*
+	 * Method to get number as input
+	 */
 
 	public int numberOfFlips() {
 		return scanner.nextInt();
 	}
 
+	/*
+	 * Random number generator
+	 */
 	public double randomNumberGenerator() {
 		return Math.random();
 	}
 
+	/*
+	 * Method to get the year
+	 */
 	public int getYear() {
 		return scanner.nextInt();
 	}
 
+	/*
+	 * Method to check leap year.
+	 */
 	public boolean IsLeapYear(int year) {
 		boolean flag = false;
 		if (year % 400 == 0)
@@ -52,18 +84,27 @@ public class Utility {
 			flag = false;
 		return flag;
 	}
+
+	/*
+	 * Method to get the months.
+	 */
 	public String[] getMonths() {
-		String[] months = { "", "January", "February", "March",
-	            "April", "May", "June",
-	            "July", "August", "September",
-	            "October", "November", "December"};
+		String[] months = { "", "January", "February", "March", "April", "May", "June", "July", "August", "September",
+				"October", "November", "December" };
 		return months;
 	}
-	public int[] getDays(){
-		int[] days = {0,31,28,31,30,31,30,31,31,30,31,30,31};
-	return days;
+
+	/*
+	 * Method to get days.
+	 */
+	public int[] getDays() {
+		int[] days = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+		return days;
 	}
 
+	/*
+	 * Method to get the input number.
+	 */
 	public int inputNumber() {
 		return scanner.nextInt();
 	}
@@ -71,11 +112,17 @@ public class Utility {
 	PowersOfTwo powersOfTwo = new PowersOfTwo();
 	int power = 1;
 
+	/*
+	 * Method to get the power
+	 */
 	public int getPower(int number) {
 		power = power * 2;
 		return power;
 	}
 
+	/*
+	 * Method to get the inverse.
+	 */
 	public double getInverse(int number) {
 		Double number1 = Double.valueOf(number);
 
@@ -84,6 +131,9 @@ public class Utility {
 
 	double harmonicNumber = 0;
 
+	/*
+	 * MEthod to get the harmonic value
+	 */
 	public double harmonicValue(int number) {
 		for (int i = 1; i <= number; i++) {
 			harmonicNumber += getInverse(i);
@@ -93,6 +143,9 @@ public class Utility {
 
 	int numberOfTwos = 0;
 
+	/*
+	 * Method to make the number as odd one.
+	 */
 	public int makeOddNumber(int number) {
 		while (number % 2 == 0) {
 			number = number / 2;
@@ -104,6 +157,9 @@ public class Utility {
 		return number;
 	}
 
+	/*
+	 * Method to get the prime factorisation of a number
+	 */
 	public int primeFactorisation(int number) {
 		number = makeOddNumber(number);
 		for (int i = 3; i <= Math.sqrt(number); i += 2) {
@@ -117,18 +173,30 @@ public class Utility {
 	}
 
 	// Gambler problem
+	/*
+	 * Method to get the stake as an input.
+	 */
 	public int getStake() {
 		return scanner.nextInt();
 	}
 
+	/*
+	 * Method to get the goal as an input.
+	 */
 	public int getGoal() {
 		return scanner.nextInt();
 	}
 
+	/*
+	 * MEthod to get the number as an input
+	 */
 	public int getNumber() {
 		return scanner.nextInt();
 	}
 
+	/*
+	 * MEthod to implement gambling algorithm
+	 */
 	public void gamblingAlgo(int stake, int goal, int number) {
 
 		int wins = 0;
@@ -155,8 +223,9 @@ public class Utility {
 
 	}
 
-	// **************************************************Coupon
-	// problem**********************//
+	/*
+	 * Coupon problem
+	 */
 	int total;
 	int number;
 
@@ -186,6 +255,9 @@ public class Utility {
 		return arr;
 	}
 
+	/*
+	 * Method to generate random number
+	 */
 	public int randomNumberFunction(int total) {
 
 		return (int) (Math.random() * total);
@@ -209,11 +281,21 @@ public class Utility {
 		return totalRandomNumbers;
 	}
 
-	/************************ Two D Array *******************************/
+	/*
+	 * 
+	 * 
+	 * Two D Array
+	 * 
+	 * 
+	 * 
+	 */
 	int M;
 	int N;
 	int dataType;
 
+	/*
+	 * Method to get the data.
+	 */
 	public void getData() {
 		System.out.println("Enter number of rows");
 		M = scanner.nextInt();
@@ -223,6 +305,9 @@ public class Utility {
 		dataType = scanner.nextInt();
 	}
 
+	/*
+	 * Method to implement the switch statement Printwriter class is used
+	 */
 	public void switchMethod() {
 		PrintWriter out = new PrintWriter(System.out);
 		switch (dataType) {
@@ -279,7 +364,10 @@ public class Utility {
 
 	}
 
-	/************************* Sum Equal to zero *************************/
+	/*
+	 * ************************ Sum Equal to zero ************************
+	 *
+	 */
 	int Number;
 
 	public int[] getDataSum() {
@@ -294,6 +382,9 @@ public class Utility {
 
 	}
 
+	/*
+	 * Method to get triplets which add to zero
+	 */
 	public void findingTriplets(int Array[]) {
 		int count = 0;
 		int length = Array.length;
@@ -311,7 +402,9 @@ public class Utility {
 		System.out.println(count);
 	}
 
-	/****************** Distance problem ********************/
+	/*
+	 * ***************** Distance problem *******************
+	 */
 	int x;
 	int y;
 
@@ -323,6 +416,9 @@ public class Utility {
 
 	}
 
+	/*
+	 * Method to calculate distance between two points
+	 */
 	public double distance(int a, int b) {
 		Double x = Double.valueOf(a);
 		Double y = Double.valueOf(b);
@@ -341,9 +437,16 @@ public class Utility {
 
 	}
 
-	/******************* Permutations of a string **********************/
+	/*
+	 * ****************** Permutations of a string *********************
+	 */
 
-	/******************** Stopwatch problem *************************/
+	/*
+	 * ******************* Stopwatch problem ************************
+	 */
+	/*
+	 * Method to calculate elapsed time
+	 */
 	public double stopWatch() {
 		long startTime = System.currentTimeMillis();
 		for (int i = 0; i < 100000000; i++) {
@@ -355,11 +458,16 @@ public class Utility {
 
 	}
 
-	/******************* Quadratic problem ************************/
+	/*
+	 * ****************** Quadratic problem ***********************
+	 */
 	int a;
 	int b;
 	int c;
 
+	/*
+	 * Method to get the roots.
+	 */
 	public void getQuadraticData() {
 		System.out.println("Enter the value of a,b and c");
 		a = scanner.nextInt();
@@ -371,9 +479,14 @@ public class Utility {
 		System.out.println("The two roots are : " + x1 + " and " + x2);
 	}
 
-	/*********************** Windchill problem ******************/
+	/*
+	 * ********************** Windchill problem *****************
+	 */
 	double t, v;
 
+	/*
+	 * MEthod to calculate the windchill
+	 */
 	public void windChill() {
 		System.out.println("ENter t and v ");
 		t = scanner.nextDouble();
@@ -385,9 +498,17 @@ public class Utility {
 		System.out.println("Wind chill is  " + w);
 	}
 
-	/*********** Algorithmic Programs *****************/
+	/*
+	 * ******************* Algorithmic Programs **************************
+	 */
 
-	/********** Anagram Detection ******************/
+	/*
+	 * ********* Anagram Detection *****************
+	 */
+
+	/*
+	 * Method to check whether the given strings are anagrams or not.
+	 */
 	public void anagramDetection() {
 		System.out.println("Enter the strings you want to compare");
 		String first = scanner.nextLine();
@@ -411,28 +532,39 @@ public class Utility {
 
 	}
 
-	/***** Prime numbers *********/
+	/*
+	 * **** Prime numbers ********
+	 */
 	ArrayList<Integer> arrli = new ArrayList<Integer>();
 
+	/*
+	 * Method to print the prime numbers
+	 */
 	public void primePrint(ArrayList<Integer> arrLi) {
 		System.out.println("The prime numbers are:");
-		for(int i=0;i<arrLi.size();i++) {
+		for (int i = 0; i < arrLi.size(); i++) {
 			System.out.println(arrLi.get(i));
 		}
 	}
+
+	/*
+	 * MEthod to get the prime numbers in a given range
+	 */
 	public ArrayList<Integer> primeNumbers() {
 
-		
 		for (int i = 2; i < 1000; i++) {
 			if (primeChecker(i)) {
 				arrli.add(i);
-				//System.out.println(i + ",");
+				// System.out.println(i + ",");
 			}
 		}
 		return arrli;
 
 	}
 
+	/*
+	 * Method to check if two primes are anagrams.
+	 */
 	public boolean primeAnagramDetection(String first, String second) {
 		first = first.replaceAll("\\s", "");
 		second = second.replaceAll("\\s", "");
@@ -453,6 +585,9 @@ public class Utility {
 
 	}
 
+	/*
+	 * Method to print the anagrams
+	 */
 	public void anagramCheck(ArrayList<Integer> arrli) {
 		System.out.println("Anagrams are: ");
 		for (int i = 0; i < arrli.size() - 1; i++) {
@@ -464,6 +599,9 @@ public class Utility {
 		}
 	}
 
+	/*
+	 * Method to check the palindromes
+	 */
 	public void palindromeCheck(ArrayList<Integer> arrli) {
 		String array[] = new String[arrli.size()];
 		for (int i = 0; i < arrli.size(); i++) {
@@ -485,6 +623,9 @@ public class Utility {
 
 		}
 	}
+	/*
+	 * MEthod to check if a number is a prime
+	 */
 
 	public boolean primeChecker(int n) {
 		boolean flag = true;
@@ -497,24 +638,36 @@ public class Utility {
 		return flag;
 	}
 
-	/*******************
+	/*
 	 * Searching and sorting
 	 * 
-	 * @return
-	 ***************/
+	 */
+
+	/*
+	 * Method to get the value of z
+	 */
 	public int getZ() {
 		return scanner.nextInt();
 
 	}
 
+	/*
+	 * Method to get the value.
+	 */
 	public int getValue() {
 		return scanner.nextInt();
 	}
 
+	/*
+	 * Method to get the string value
+	 */
 	public String getStringValue() {
 		return scanner.next();
 	}
 
+	/*
+	 * Method to get the integer array from scanner
+	 */
 	public Integer[] getIntegerArray() {
 		System.out.println("Enter the number of integers");
 		int n = scanner.nextInt();
@@ -526,6 +679,9 @@ public class Utility {
 		return arr;
 	}
 
+	/*
+	 * Method to get string array from scanner
+	 */
 	public String[] getStringArray() {
 		System.out.println("Enter the number of Strings");
 		int n = scanner.nextInt();
@@ -538,6 +694,9 @@ public class Utility {
 
 	}
 
+	/*
+	 * Generic method for binary search
+	 */
 	public <T extends Comparable<T>> boolean binarySearch(T[] arr, T value, int low, int high) {
 		int mid = low + (high - low) / 2;
 		while (low <= high) {
@@ -553,7 +712,13 @@ public class Utility {
 		return false;
 	}
 
-	/******** Sorting *********/
+	/*
+	 * ******* Sorting *********
+	 */
+
+	/*
+	 * Generic insertion sort method
+	 */
 	public <T extends Comparable<T>> T[] insertionSort(T[] arr) {
 		int n = arr.length;
 		for (int i = 0; i < n; i++) {
@@ -569,6 +734,9 @@ public class Utility {
 
 	}
 
+	/*
+	 * Generic bubble sort method
+	 */
 	public <T extends Comparable<T>> T[] bubbleSort(T[] arr) {
 		int n = arr.length;
 		T temp;
@@ -589,11 +757,19 @@ public class Utility {
 		return arr;
 	}
 
-	/*********** Finding Your Number ***********/
+	/*
+	 * ********** Finding Your Number **********
+	 */
+	/*
+	 * Method to get the value of N
+	 */
 	public int getN() {
 		return scanner.nextInt();
 	}
 
+	/*
+	 * Binary search for ints
+	 */
 	public int binarySearch(int low, int high) {
 		int mid = low + (high - low) / 2;
 		boolean var;
@@ -619,12 +795,19 @@ public class Utility {
 		return 0;
 	}
 
-	/********* Binary search the word from the list *********/
+	/*
+	 * ******** Binary search the word from the list ********
+	 */
+	/*
+	 * Method to get the word
+	 */
 	public String getWord() {
 		return scanner.next();
 	}
 
-	/******* Merge Sort ********/
+	/*
+	 * ****** Merge Sort *******
+	 */
 	public String[] mergeSort(String[] arr, int low, int high) {
 		if (low < high) {
 			int mid = low + (high - low) / 2;
@@ -635,6 +818,9 @@ public class Utility {
 		return arr;
 	}
 
+	/*
+	 * Method for merging to arrays
+	 */
 	public void merge(String arr[], int low, int mid, int high) {
 		int s1 = mid - low + 1;
 		int s2 = high - mid;
@@ -667,7 +853,12 @@ public class Utility {
 		}
 	}
 
-	/***** Vending Machine *******/
+	/*
+	 * **** Vending Machine ******
+	 */
+	/*
+	 * Method to get the value of change
+	 */
 	public int getChange() {
 		return scanner.nextInt();
 	}
@@ -680,8 +871,12 @@ public class Utility {
 	 * high = arr[index2]; index--; return vending(arr, count, value, high, index,
 	 * index2); }
 	 */
+
+	/*
+	 * Method to get the number of notes
+	 */
 	public int[] vending(int[] notes, int change) {
-		
+
 		int[] numberofnotes = new int[notes.length];
 		for (int i = notes.length - 1; i >= 0; i--) {
 			if (change / notes[i] >= 1) {
@@ -693,7 +888,13 @@ public class Utility {
 		return numberofnotes;
 	}
 
-	/******* Day of the week ********/
+	/*
+	 * ****** Day of the week *******
+	 */
+
+	/*
+	 * Methods for getting month,date and year.
+	 */
 	public int getMonth() {
 		return scanner.nextInt();
 	}
@@ -706,19 +907,31 @@ public class Utility {
 		return scanner.nextInt();
 	}
 
-	public int dayOfWeek(int m,int d,int y){
-		int y0 = y-(14-m) /12;
-		int x=y0+(y0/4)-(y0/100)+(y0/400);
-		int m0 = m + 12 * ((14-m) /12)-2;
-		int d0=(d+x+m0*31/12)%7;
+	/*
+	 * Method to get the day of the week from the given inputs
+	 */
+	public int dayOfWeek(int m, int d, int y) {
+		int y0 = y - (14 - m) / 12;
+		int x = y0 + (y0 / 4) - (y0 / 100) + (y0 / 400);
+		int m0 = m + 12 * ((14 - m) / 12) - 2;
+		int d0 = (d + x + m0 * 31 / 12) % 7;
 		return d0;
 	}
 
-	/****** Temperature conversion *******/
+	/*
+	 * ***** Temperature conversion ******
+	 */
+
+	/*
+	 * Method to get the temparature
+	 */
 	public Double getTemperature() {
 		return scanner.nextDouble();
 	}
 
+	/*
+	 * Method to convert temperature from one unit to other.
+	 */
 	public Double convertTemperature(Double temp, int value) {
 		double temperature;
 		if (value == 1) {
@@ -729,7 +942,13 @@ public class Utility {
 		return temperature;
 	}
 
-	/**** Monthly payment *******/
+	/*
+	 * *** Monthly payment ******
+	 */
+
+	/*
+	 * Methods to get the P,Y,R
+	 */
 	public Double getP() {
 		return scanner.nextDouble();
 	}
@@ -742,6 +961,9 @@ public class Utility {
 		return scanner.nextDouble();
 	}
 
+	/*
+	 * Method to get the payment from the given data
+	 */
 	public Double getPayment(Double P, Double Y, Double R) {
 		Double n = 12 * Y;
 		Double r = R / (12 * 100);
@@ -750,7 +972,13 @@ public class Utility {
 		return payment;
 	}
 
-	/***** Sqrt *****/
+	/*
+	 * **** Sqrt ****
+	 */
+
+	/*
+	 * Method to get the square root
+	 */
 	public Double getSqrt(Double c) {
 		double t = c;
 		while (Math.abs(t - (c / t)) > (1e-15) * t) {
@@ -759,7 +987,13 @@ public class Utility {
 		return t;
 	}
 
-	/***** To Binary *****/
+	/*
+	 * **** To Binary ****
+	 */
+
+	/*
+	 * Method to get the binary number.
+	 */
 	public Integer[] getBinary(int n) {
 		int[] binaryNum = new int[1000];
 		int i = 0;
@@ -776,7 +1010,13 @@ public class Utility {
 		return arr;
 	}
 
-	/**** Swappping Nibbles ******/
+	/*
+	 * *** Swappping Nibbles *****
+	 */
+
+	/*
+	 * Method to swap nibbles
+	 */
 
 	public int[] swapNibbles(int n) {
 		Integer[] arr = getBinary(n);
@@ -787,9 +1027,9 @@ public class Utility {
 		int[] result = new int[8];
 		int[] array1 = new int[4];
 		int[] array2 = new int[4];
-		
-		for(int i=arr.length-1,j=3;j>=0;i--,j--){
-			array1[j]=arr[i];			
+
+		for (int i = arr.length - 1, j = 3; j >= 0; i--, j--) {
+			array1[j] = arr[i];
 		}
 		int k = 3;
 		for (int i = array.length - 5; i >= 0; i--, k--) {
@@ -807,61 +1047,106 @@ public class Utility {
 		}
 		return result;
 	}
-	/**** Data Structures *****/
-	/***** UnOrdered list 
-	 * @param <T>*****/
-		public class LinkedList<T>{
-			Node head;
-			public class Node{
-				T data;
-				Node next;
-			public Node(T d){
-					data =d;
-					next = null;
-				}
+
+	/*
+	 * ******** Data Structures *********
+	 */
+	/*
+	 * 
+	 * UnOrdered list
+	 * 
+	 * @param <T>
+	 *
+	 */
+	/*
+	 * @author 1022279
+	 *
+	 *Linked list class
+	 *
+	 * @param <T>
+	 */
+	public class LinkedList<T> {
+		Node head;
+
+		public class Node {
+			T data;
+			Node next;
+
+			public Node(T d) {
+				data = d;
+				next = null;
 			}
-		 public void push(T newData) {
-			 Node newNode = new Node(newData);
-			 newNode.next = head;
-			 head = newNode;
-		 }
-		 public void print() {
-			 Node n = head;
-			 while(n!=null) {
-				 System.out.println(n.data + " ");
-				 n = n.next;
-			 }
-		 }
 		}
-		/********Binary Search Tree*******/
-		public long factorial( int n)
-		{
-		     long res = 1;		    
-		    for (int i = 1; i <= n; ++i)
-		    {
-		        res *= i;
-		    }	 
-		    return res;
+
+		/**
+		 * @param newData
+		 * Method  for pushing data.
+		 */
+		public void push(T newData) {
+			Node newNode = new Node(newData);
+			newNode.next = head;
+			head = newNode;
 		}
-		 
-		public long coefficient(int n,int k)
-		{
-		    long res = 1;
-		    if (k > n - k)
-		        k = n - k;
-		    for (int i = 0; i < k; ++i)
-		    {
-		        res *= (n - i);
-		        res /= (i + 1);
-		    }
-		 
-		    return res;
+
+		/**
+		 * Method for printing linked list
+		 */
+		public void print() {
+			Node n = head;
+			while (n != null) {
+				System.out.println(n.data + " ");
+				n = n.next;
+			}
 		}
-		public  long catalanNumber(int n)
-		{
-		    
-		    long c = coefficient(2*n, n);
-		    return c/(n+1);
+	}
+
+	/*
+	 * ******* Binary Search Tree ******
+	 */
+	/**
+	 * @param n
+	 * 
+	 * Method for calculating factorial
+	 * 
+	 * @return
+	 */
+	public long factorial(int n) {
+		long res = 1;
+		for (int i = 1; i <= n; ++i) {
+			res *= i;
 		}
-		
+		return res;
+	}
+
+	/**
+	 * Method for calculating caefficient
+	 * 
+	 * @param n
+	 * @param k
+	 * @return
+	 */
+	public long coefficient(int n, int k) {
+		long res = 1;
+		if (k > n - k)
+			k = n - k;
+		for (int i = 0; i < k; ++i) {
+			res *= (n - i);
+			res /= (i + 1);
+		}
+
+		return res;
+	}
+
+	/**
+	 * 
+	 * Method for calculating Catalan Number which is the count for number of Binary Search Trees
+	 * @param n
+	 * @return
+	 */
+	public long catalanNumber(int n) {
+
+		long c = coefficient(2 * n, n);
+		return c / (n + 1);
+	}
+
 }
