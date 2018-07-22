@@ -1,5 +1,11 @@
 package com.jda.utility;
 
+/**
+ * Unordered linked list class
+ * @author 1022279
+ *
+ * @param <T>
+ */
 public class UnOrderedLinkedList<T> {
 	private Node<T> first;
 	private Node<T> last;
@@ -29,11 +35,18 @@ public class UnOrderedLinkedList<T> {
 			this.next = next;
 		}		
 	}
+	/**
+	 * Default constructor
+	 */
 	public UnOrderedLinkedList() {
 		Node<T> var = new Node<T>();
 		this.first = var;
 		this.last=this.first;
 	}
+	/**
+	 * Method for adding data to the list
+	 * @param data
+	 */
 	public void add(T data) {
 		Node<T> newData = new Node<T>(data);
 		if(this.first.getData() == null) {
@@ -46,6 +59,10 @@ public class UnOrderedLinkedList<T> {
 		}
 		size++;
 	}
+	/**
+	 * Method for adding at the start of the list
+	 * @param data
+	 */
 	public void addFirst(T data) {
 		Node<T> newData = new Node<T>(data);
 		if(this.first.getData() == null) {
@@ -58,6 +75,9 @@ public class UnOrderedLinkedList<T> {
 		}
 	}
 
+	/**
+	 * Method for removing the last node of the list
+	 */
 	public void removeLast() {
 		Node<T> current = first;
 		Node<T> temp = first;
@@ -69,6 +89,9 @@ public class UnOrderedLinkedList<T> {
 		last =temp;
 		last.setNext(null);	
 	}
+	/**
+	 * Method for removing the forst node
+	 */
 	public void removeFirst() {
 		Node<T> current = first;
 		if(this.first.getData()==null) {
@@ -84,11 +107,19 @@ public class UnOrderedLinkedList<T> {
 			}
 		}
 	}
+	/**
+	 * Method for getting the first node's data
+	 * @return
+	 */
 	public T firstValue() {
 		Node<T> current = first;
 		return current.getData();
 		
 	}
+	/**
+	 *  Method for getting the last node's data
+	 * @return
+	 */
 	public T lastValue() {
 		Node<T> current = first;
 		//Node<T> currentNext = current.getNext();
@@ -107,10 +138,19 @@ public class UnOrderedLinkedList<T> {
 		return currentBack.getData();
 	}
 	*/
+	
+	/**
+	 * MEthod to know if the list is empty
+	 * @return
+	 */
 	public boolean isEmpty() {
 		if(first.getNext()==null) return true;
 		else return false;
 	}
+	/**
+	 * Method for removing node with the data same as the given data
+	 * @param data
+	 */
 	public void remove(T data) {
 		Node<T> current = first;
 		if(this.first.getData().equals(data)) {
@@ -139,6 +179,9 @@ public class UnOrderedLinkedList<T> {
 			
 		}
 		}
+	/**
+	 * Method for printing the list
+	 */
 	public void print() {
 		boolean allPrinted = false;
 		Node<T> crr = first;
@@ -159,6 +202,10 @@ public class UnOrderedLinkedList<T> {
 		}
 		System.out.println();
 	}
+	/**
+	 * Method for getting the size of the list
+	 * @return
+	 */
 	public int getSize() {
 		return size;
 	}

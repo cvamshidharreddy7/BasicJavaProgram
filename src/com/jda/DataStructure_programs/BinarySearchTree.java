@@ -2,7 +2,15 @@ package com.jda.DataStructure_programs;
 
 import com.jda.utility.Utility;
 
+/**
+ * BST class
+ * @author 1022279
+ *
+ */
 public class BinarySearchTree {
+		/**
+		 * @param args
+		 */
 		public static void main(String[] args) {
 			Utility utility =  new Utility();
 			System.out.println("Enter the number of attemps");

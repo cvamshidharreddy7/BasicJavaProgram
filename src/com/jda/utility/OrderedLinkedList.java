@@ -1,4 +1,9 @@
 package com.jda.utility;
+/**
+ * @author 1022279
+ * Ordered linkedlist
+ * @param <T>
+ */
 public class OrderedLinkedList<T extends Comparable<T> > {
 	private Node<T> first;
 	private Node<T> last;

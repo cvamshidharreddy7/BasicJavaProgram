@@ -121,7 +121,7 @@ public class OrderedList<T extends Comparable<T>>  {
 		Node<T> prev = null;
 		while (temp != null && ((temp.value).compareTo(data) >= 0)) {
 			prev = temp;
-			temp = temp.next;
+			temp = temp.next;s
 
 		}
 		if (temp == null) {

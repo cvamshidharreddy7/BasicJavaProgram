@@ -4,7 +4,15 @@ import com.jda.utility.Queue;
 import com.jda.utility.QueueBank;
 import com.jda.utility.Utility;
 
+/**
+ * Banking class
+ * @author 1022279
+ *
+ */
 public class Banking {
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Utility utility = new Utility();
 		QueueBank<Integer> q = new QueueBank<Integer>();

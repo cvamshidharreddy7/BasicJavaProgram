@@ -1,14 +1,4 @@
-/*
- * 
- * purpose: To store all the utility methods
- * 
- * @author 1022279
- * @version 1.0
- * @since 4-07-2017 * 
- * 
- * 
- * 
- */
+
 package com.jda.utility;
 
 import java.io.PrintWriter;
@@ -22,6 +12,12 @@ import javax.xml.soap.Node;
 
 import com.jda.functionalprograms.PowersOfTwo;
 
+/**
+ *  @author 1022279
+ * @version 1.0
+ * @since 4-07-2017 
+ *
+ */
 public class Utility {
 	Scanner scanner;
 
