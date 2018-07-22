@@ -7,7 +7,7 @@ import com.jda.utility.QueueUsing2Stacks;
 import com.jda.utility.Utility;
 
 public class WeekDayUsing2Stacks {
-	public static void main(String args[]) {
+	public static void main(String args[]) throws Exception {
 		Utility utility = new Utility();
 		HashMap<Integer, QueueUsing2Stacks<Integer>> week = new HashMap<>();
 		for (int i = 0; i < 6; i++) {
@@ -25,7 +25,7 @@ public class WeekDayUsing2Stacks {
 		int firstDay = utility.dayOfWeek(month, 1, year);// First day.
 		int count = 1;
 		for (int i = 0; i < 6; i++) {
-			QueueUsing2Stacks<Integer> q = new QueueUsing2Stacks<Integer>();
+			QueueUsing2Stacks<Integer> q = new QueueUsing2Stacks<Integer>(31);
 			week.put(i, q);
 			for (int j = 0; j < 7; j++) {
 				if (i == 0 && j < firstDay) {
