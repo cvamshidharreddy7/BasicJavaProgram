@@ -414,13 +414,19 @@ public class Utility {
 	/***** Prime numbers *********/
 	ArrayList<Integer> arrli = new ArrayList<Integer>();
 
+	public void primePrint(ArrayList<Integer> arrLi) {
+		System.out.println("The prime numbers are:");
+		for(int i=0;i<arrLi.size();i++) {
+			System.out.println(arrLi.get(i));
+		}
+	}
 	public ArrayList<Integer> primeNumbers() {
 
-		System.out.println("The prime numbers are:");
+		
 		for (int i = 2; i < 1000; i++) {
 			if (primeChecker(i)) {
 				arrli.add(i);
-				System.out.println(i + ",");
+				//System.out.println(i + ",");
 			}
 		}
 		return arrli;

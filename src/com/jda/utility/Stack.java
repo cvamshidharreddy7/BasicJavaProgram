@@ -6,8 +6,10 @@ public class Stack<T extends Comparable> {
 	public void push(T data) {
 		linkedList.add(data);
 	}
-	public void pop() {
+	public T pop() {
+		T random =linkedList.lastValue();
 		linkedList.removeLast();
+		return random;
 	}
 	public T peek() {
 		return linkedList.lastValue();
