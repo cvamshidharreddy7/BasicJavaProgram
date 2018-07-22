@@ -4,7 +4,14 @@ import java.util.Scanner;
 
 import com.jda.utility.Stack;
 
+/**
+ * @author 1022279
+ *
+ */
 public class StackCheck {
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		String inputString;
 		System.out.println("Enter the input string ");

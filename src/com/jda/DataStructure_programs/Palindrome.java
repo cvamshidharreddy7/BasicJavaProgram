@@ -3,6 +3,11 @@ package com.jda.DataStructure_programs;
 import com.jda.utility.Deque;
 import com.jda.utility.Utility;
 
+/**
+ * Palindrome class
+ * @author 1022279
+ *
+ */
 public class Palindrome {
 	public static void main(String[] args) {
 	Utility utility = new Utility();

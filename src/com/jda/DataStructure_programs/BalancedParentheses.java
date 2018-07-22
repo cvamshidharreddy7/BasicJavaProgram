@@ -14,6 +14,9 @@ import com.jda.utility.UnOrderedLinkedList;
  *
  */
 public class BalancedParentheses {
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		String inputString;
 		System.out.println("Enter the input string ");

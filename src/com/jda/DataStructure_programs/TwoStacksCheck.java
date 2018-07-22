@@ -5,13 +5,17 @@ import java.util.Scanner;
 import com.jda.utility.QueueUsing2Stacks;
 import com.jda.utility.Stack;
 
+/**
+ * @author 1022279
+ *
+ */
 public class TwoStacksCheck {
 	public static void main(String[] args) {
 		String inputString;
 		System.out.println("Enter the input string ");
 		Scanner scanner = new Scanner(System.in);
 		inputString = scanner.nextLine();
-		QueueUsing2Stacks<String> stack = new QueueUsing2Stacks<String>();
+		QueueUsing2Stacks<String> stack = new QueueUsing2Stacks<String>(10000);
 		for(int i=0;i<inputString.length();i++) {
 			stack.enqueue(String.valueOf(inputString.charAt(i)));
 		}

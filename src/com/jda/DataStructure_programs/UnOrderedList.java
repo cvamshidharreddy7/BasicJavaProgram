@@ -9,7 +9,15 @@ import java.util.Scanner;
 import com.jda.utility.UnOrderedLinkedList;
 import com.jda.utility.Utility;
 
+/**
+ * @author 1022279
+ *
+ */
 public class UnOrderedList {
+	/**
+	 * @param args
+	 * @throws FileNotFoundException
+	 */
 	public static void main(String[] args) throws FileNotFoundException{
 		Utility utility = new Utility();
 		File file = new File("C:\\Users\\1022279\\Desktop\\LinkedList.txt");

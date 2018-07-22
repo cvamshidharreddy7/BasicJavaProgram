@@ -6,7 +6,15 @@ import com.jda.utility.Queue;
 import com.jda.utility.QueueUsing2Stacks;
 import com.jda.utility.Utility;
 
+/**
+ * @author 1022279
+ *
+ */
 public class WeekDayUsing2Stacks {
+	/**
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main(String args[]) throws Exception {
 		Utility utility = new Utility();
 		HashMap<Integer, QueueUsing2Stacks<Integer>> week = new HashMap<>();

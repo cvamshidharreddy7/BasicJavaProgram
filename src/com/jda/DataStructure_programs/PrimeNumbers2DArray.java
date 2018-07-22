@@ -4,7 +4,14 @@ import java.util.ArrayList;
 
 import com.jda.utility.Utility;
 
+/**
+ * @author 1022279
+ *
+ */
 public class PrimeNumbers2DArray {
+	/**
+	 * @param args
+	 */
 	public static void main(String args[]) {
 		String[][] primeNumbers = new String[10][30];
 		Utility utility = new Utility();

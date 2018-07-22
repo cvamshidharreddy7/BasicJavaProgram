@@ -9,6 +9,11 @@ import java.util.Scanner;
 import com.jda.utility.OrderedList;
 import com.jda.utility.Utility;
 
+/**
+ * Class for creating slots using hashing
+ * @author 1022279
+ *
+ */
 public class NumberInASlot {
 	public static void main(String[] args)  throws FileNotFoundException{
 		Utility utility = new Utility();

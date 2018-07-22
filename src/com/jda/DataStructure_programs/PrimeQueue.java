@@ -5,7 +5,14 @@ import java.util.ArrayList;
 import com.jda.utility.Queue;
 import com.jda.utility.Utility;
 
+/**
+ * @author 1022279
+ *
+ */
 public class PrimeQueue {
+/**
+ * @param args
+ */
 public static void main(String args[]) {
 		
 		Utility utility = new Utility();

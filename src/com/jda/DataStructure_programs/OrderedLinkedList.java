@@ -10,7 +10,15 @@ import java.util.Scanner;
 import com.jda.utility.OrderedList;
 import com.jda.utility.Utility;
 
+/**
+ * @author 1022279
+ *
+ */
 public class OrderedLinkedList {
+	/**
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main(String args[]) throws Exception {
 		OrderedList<Integer> list = new OrderedList<Integer>();
 		ArrayList<Integer> arrLi = new ArrayList<Integer>();

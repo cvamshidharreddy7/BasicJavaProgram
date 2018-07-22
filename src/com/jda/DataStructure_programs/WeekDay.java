@@ -3,7 +3,14 @@ package com.jda.DataStructure_programs;
 import com.jda.utility.Queue;
 import com.jda.utility.Utility;
 import java.util.HashMap;
+/**
+ * @author 1022279
+ *
+ */
 public class WeekDay {
+	/**
+	 * @param args
+	 */
 	public static void main(String args[]) {
 		Utility utility = new Utility();
 		
