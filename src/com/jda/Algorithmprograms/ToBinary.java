@@ -2,7 +2,14 @@ package com.jda.Algorithmprograms;
 
 import com.jda.utility.Utility;
 
+/**
+ * @author 1022279
+ *
+ */
 public class ToBinary {
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Utility utility = new Utility();
 		System.out.println("Enter the value of the decimal number");

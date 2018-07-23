@@ -1,6 +1,10 @@
 package com.jda.utility;
-
-public class LinkedList<T> {
+/**
+ * @author 1022279
+ * Ordered linkedlist
+ * @param <T>
+ */
+public class OrderedLinkedList<T extends Comparable<T> > {
 	private Node<T> first;
 	private Node<T> last;
 	private int size;
@@ -29,12 +33,12 @@ public class LinkedList<T> {
 			this.next = next;
 		}		
 	}
-	public LinkedList() {
+	public OrderedLinkedList() {
 		Node<T> var = new Node<T>();
 		this.first = var;
 		this.last=this.first;
 	}
-	public void add(T data) {
+	/*public void add(T data) {
 		Node<T> newData = new Node<T>(data);
 		if(this.first.getData() == null) {
 			this.first = newData;
@@ -45,6 +49,54 @@ public class LinkedList<T> {
 			this.last = newData;
 		}
 		size++;
+	}
+*/
+	
+	public void add(T data) {
+		Node<T> newData = new Node<T>(data);
+		//Node<T> current = first;
+		 //int z= (first.getData()).compareTo(newData.getData());
+	/*	else {
+			current = first;
+			int x= current.getNext().data.compareTo(newData.getData());
+			while(current.getNext() !=null && x<0) {
+				current = current.getNext();
+				}
+			newData.next= current.getNext();
+			current.next = newData;		
+		} */
+		 
+		if(this.first==null) {
+			newData.setNext(first);
+			first = newData;
+		}
+		else {
+			Node<T> current = first;
+			Node<T> prev = null;
+			while(current !=null && ((current.getData()).compareTo(newData.getData())<=0)) {
+				prev = current;
+				current = current.getNext();
+			}
+			
+			
+			if(current==null) {
+				prev.setNext(newData);
+				newData.setNext(null);
+				
+			}
+			else {
+				if(current==first) {
+					newData.setNext(current);
+					first = newData;
+				}
+				else {
+					newData.setNext(current);
+					prev.setNext(newData);
+				}
+				
+			}
+		}
+		
 	}
 	
 	public void remove(T data) {

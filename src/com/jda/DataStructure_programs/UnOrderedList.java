@@ -6,10 +6,18 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.jda.utility.LinkedList;
+import com.jda.utility.UnOrderedLinkedList;
 import com.jda.utility.Utility;
 
+/**
+ * @author 1022279
+ *
+ */
 public class UnOrderedList {
+	/**
+	 * @param args
+	 * @throws FileNotFoundException
+	 */
 	public static void main(String[] args) throws FileNotFoundException{
 		Utility utility = new Utility();
 		File file = new File("C:\\Users\\1022279\\Desktop\\LinkedList.txt");
@@ -18,7 +26,7 @@ public class UnOrderedList {
 		while(scanner.hasNext()) {
 			arrli.add(scanner.next());
 		}
-		LinkedList<String> linkedList = new LinkedList<String>();
+		UnOrderedLinkedList<String> linkedList = new UnOrderedLinkedList<String>();
 		for(int i=0;i<arrli.size();i++) {
 			linkedList.add(arrli.get(i));
 		}
@@ -45,6 +53,7 @@ public class UnOrderedList {
 		}
 		System.out.println("Linked list now is: ");
 		linkedList.print();
+		
 		PrintStream o = new PrintStream(new File("A.txt"));
 		PrintStream console = System.out;
 		System.setOut(o);
