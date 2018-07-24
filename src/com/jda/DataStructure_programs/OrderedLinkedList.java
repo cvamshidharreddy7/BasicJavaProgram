@@ -38,6 +38,7 @@ public class OrderedLinkedList {
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + "  ");
 		}
+		
 		System.out.println();
 		Arrays.sort(arr);
 		for (int i = 0; i < arr.length; i++) {
@@ -45,7 +46,7 @@ public class OrderedLinkedList {
 		}
 		
 		list.removeAt(number);
-
+		
 		System.out.println("The final ordered linked  list is:");
 		list.print();
 		scanner.close();

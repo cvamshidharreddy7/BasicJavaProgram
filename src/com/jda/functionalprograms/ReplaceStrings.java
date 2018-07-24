@@ -10,7 +10,14 @@
 package com.jda.functionalprograms;
 import com.jda.utility.Utility;
 
+/**
+ * @author 1022279
+ *
+ */
 public class ReplaceStrings {
+				/**
+				 * @param args
+				 */
 				public static void main(String[] args){
 					
 							

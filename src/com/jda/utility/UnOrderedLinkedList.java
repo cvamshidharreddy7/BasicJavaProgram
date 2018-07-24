@@ -90,7 +90,7 @@ public class UnOrderedLinkedList<T> {
 		last.setNext(null);	
 	}
 	/**
-	 * Method for removing the forst node
+	 * Method for removing the first node
 	 */
 	public void removeFirst() {
 		Node<T> current = first;
