@@ -50,5 +50,7 @@ public class Regex {
 	Matcher matcher2 = replace2.matcher(message);
 	System.out.println(matcher2.replaceAll("Vamshidhar Reddy Cherukupalli"));
 	*/
+	
+	scanner.close();
 	}
 }

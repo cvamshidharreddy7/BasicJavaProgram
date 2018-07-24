@@ -30,7 +30,9 @@ public class DataManagementJSON {
 	 Iterator<Map.Entry> iterator1 ;
 	 Iterator iterator2 = Rice.iterator();
 	
-	int totalPrice =0;
+	 int totalPrice =0;
+	
+	/*********Details of Rice*******************/
 	System.out.println("The details of Rice are:");
 	System.out.println();
 	 while (iterator2.hasNext()) 
