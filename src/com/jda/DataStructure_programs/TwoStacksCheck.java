@@ -19,12 +19,12 @@ public class TwoStacksCheck {
 		for(int i=0;i<inputString.length();i++) {
 			stack.enqueue(String.valueOf(inputString.charAt(i)));
 		}
-		stack.print();
-		System.out.println(stack.size());
-		int x= stack.size();
-		for(int i=0;i<x;i++) {
-			System.out.print(stack.dequeue()+ ",");		
-		}
+		//stack.print();
+		//System.out.println(stack.size());
+	//	int x= stack.size();
+	//	for(int i=0;i<x;i++) {
+		//	System.out.print(stack.dequeue()+ ",");		
+		//}
 		scanner.close();
 	}
 }

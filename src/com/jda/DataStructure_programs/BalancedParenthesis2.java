@@ -37,7 +37,7 @@ public class BalancedParenthesis2 {
 			}
 		}
 		if (stack.isEmpty()) {
-			check = check && true;
+			check =  check &&true;
 		} else
 			check = false;
 		if(check==false) System.out.println("Not balanced!");
