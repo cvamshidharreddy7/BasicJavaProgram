@@ -5,10 +5,14 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
 import javax.xml.soap.Node;
+
+import org.json.simple.JSONArray;
 
 import com.jda.functionalprograms.PowersOfTwo;
 
@@ -38,6 +42,9 @@ public class Utility {
 	/*
 	 * Method to replace string
 	 */
+	public boolean getBoolean() {
+		return scanner.nextBoolean();
+	}
 	public String replaceString(String x, String name) {
 		x = x.replaceAll("<<UserName>>", name);
 		return x;
@@ -660,7 +667,10 @@ public class Utility {
 	public String getStringValue() {
 		return scanner.next();
 	}
-
+	
+	public String getLine() {
+		return scanner.nextLine();
+	}
 	/*
 	 * Method to get the integer array from scanner
 	 */
@@ -1144,5 +1154,51 @@ public class Utility {
 		long c = coefficient(2 * n, n);
 		return c / (n + 1);
 	}
+	
+	/********Inventory Management*******/
+	public static Boolean compare(String str1,String str2) {
+		 if(str1.compareTo(str2)==0) return true;
+		 return false;
+	 }
+	public void function(JSONArray type) {
+		Iterator<Map.Entry> iteratorp1 ;
+		 Iterator iteratorp2 = type.iterator();
+		 int totalPricepulses=0;
+		 while (iteratorp2.hasNext()) 
+	     {
+			 iteratorp1 = ((Map) iteratorp2.next()).entrySet().iterator();
+	       
+	         
+	         int priceLocalpulses =0;
+	         int wt =0;//wt=p*wpk
+	         int p=0;
+	         int wpk=0;//weight per kg
+	         while (iteratorp1.hasNext()) {
+	             Map.Entry pair = iteratorp1.next();
+	             
+	             String key = (String) pair.getKey();
+	             String value = (String) pair.getValue();
+	             if(compare(key,"Price per kg")==true) {
+	            	p= Integer.parseInt(value);
+	             }
+	             if(compare(key,"Weight in kg")==true) {
+	            	 wpk = Integer.parseInt(value);
+	             }
+	             
+	             System.out.println(key + " : " + value);             
+	         }
+	         priceLocalpulses = p*wpk;
+	         System.out.println("priceLocalpulses "+priceLocalpulses);
+	         System.out.println();
+	         totalPricepulses = totalPricepulses+priceLocalpulses;
+	         
+	     }
+		 System.out.println("Total price  is "+ +totalPricepulses);
+		 
+		 System.out.println();
+	}
+	
+	
+	
 
 }

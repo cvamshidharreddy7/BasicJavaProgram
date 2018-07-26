@@ -54,7 +54,7 @@ public class Stock {
 	         totalPrice = totalPrice+stockLocal;
 	         
 	     }
-		 System.out.println("Total stock price is "+ +totalPrice);
+		 System.out.println("Total stock price is "+ +totalPrice + "$");
 		 System.out.println();
 		 
 	}
