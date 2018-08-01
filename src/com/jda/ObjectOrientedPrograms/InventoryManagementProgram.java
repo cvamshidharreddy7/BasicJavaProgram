@@ -43,7 +43,7 @@ public class InventoryManagementProgram {
 		boolean pro;
 		pro = utility.getBoolean();
 
-		HashMap<String, ArrayList<Inventory>> map = new HashMap();
+	//	HashMap<String, ArrayList<Inventory>> map = new HashMap();
 		/*
 		 * for (String inventory : str) { map.put(inventory, readJsonArray(jo,
 		 * inventory)); }
@@ -73,12 +73,12 @@ public class InventoryManagementProgram {
 				// inventoryMap.get(inventory).add(inventory);
 
 				String json = mapper.writeValueAsString(inventory);
-				System.out.println(json);
+				System.out.println("Json is "+ json);
 
 				variable.add(1, inventory);
 				JSONObject jo2 = (JSONObject) obj;
 				jo2.put(str[i], variable);
-				System.out.println(variable);
+				System.out.println("Variable is "+variable);
 
 				System.out.println();
 				System.out.println();
@@ -124,7 +124,7 @@ public class InventoryManagementProgram {
 					}
 					
 				
-					// Print the file onto the console
+					
 					JSONObject jo3 = (JSONObject) obj;
 					jo3.put(str[m], remove);
 					//System.out.println(remove);
@@ -145,7 +145,7 @@ public class InventoryManagementProgram {
 			pro = utility.getBoolean();
 		}
 		System.out.println("Done all the operations and sent result to JSONOutput file");
-
+		scan.close();
 	}
 
 

@@ -10,7 +10,8 @@ import java.util.Map;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
-public class Stock {
+public class StockReport {
+	
 	public static Boolean compare(String str1,String str2) {
 		 if(str1.compareTo(str2)==0) return true;
 		 return false;

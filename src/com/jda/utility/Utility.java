@@ -1198,7 +1198,17 @@ public class Utility {
 		 System.out.println();
 	}
 	
-	
-	
+	/******Deck of cards****/
+	public String[] suit() {
+		String[] suits = {"Clubs","Diamonds", "Hearts", "Spades"};
+		return suits;
+	}
+	public String[] rank() {
+		String[] rank = {"01","02","03","04","05","06","07","08","09","10","11","12","13"};
+		return rank;
+	}
+	public int randNum(int min,int max) {
+		return (int)((Math.random() * ((max - min) + 1)) + min);
+	}
 
 }
